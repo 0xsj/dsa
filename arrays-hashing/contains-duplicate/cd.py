@@ -29,3 +29,33 @@ class Solution:
 
 solution = Solution()
 print(solution.containsDuplicate(a))
+
+
+# Try 2 Hashmap
+"""
+1. instantiate a class named solution
+2. method named containsDuplicate, which takes in a list of integers. expect a boolean return
+3. create a hashset, where we are going to store unique elements we encounter
+4. for each element i in nums,
+5. if i already exists in the hashset, we return True. 
+6. we add each element i into the hashset
+7. if we encounter 0 duplicates, return false
+
+time: 
+o(1)
+
+space:
+o(1)
+"""
+class Solution2:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
+
+        for i in nums:
+            if i in hashset:
+                return True
+            hashset.add(i)
+        return False
+    
+hashmap = Solution2()
+print(hashmap.containsDuplicate(b))
