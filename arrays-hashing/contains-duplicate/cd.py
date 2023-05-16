@@ -42,10 +42,10 @@ print(solution.containsDuplicate(a))
 7. if we encounter 0 duplicates, return false
 
 time: 
-o(1)
+o(n)
 
 space:
-o(1)
+o(n)
 """
 class Solution2:
     def containsDuplicate(self, nums: List[int]) -> bool:
