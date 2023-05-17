@@ -1,7 +1,5 @@
 package main
 
-var a []int
-
 func containsDuplicate(nums []int) bool {
 	seen := make(map[int]bool)
 
