@@ -13,3 +13,12 @@ function containsDuplicate(nums: number[]): boolean {
 }
 
 console.log(containsDuplicate(a));
+
+// hash
+function containsDuplicate2(nums: number[]): boolean {
+  let mySet = new Set<number>(nums);
+  console.log(mySet);
+  return false;
+}
+
+containsDuplicate2(a);

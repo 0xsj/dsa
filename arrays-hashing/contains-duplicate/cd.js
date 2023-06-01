@@ -11,3 +11,10 @@ function containsDuplicate(nums) {
     return false;
 }
 console.log(containsDuplicate(a));
+// hash
+function containsDuplicate2(nums) {
+    var mySet = new Set(nums);
+    console.log(mySet);
+    return false;
+}
+containsDuplicate2(a);
