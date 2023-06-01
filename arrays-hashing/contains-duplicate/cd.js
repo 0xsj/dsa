@@ -10,11 +10,14 @@ function containsDuplicate(nums) {
     }
     return false;
 }
-console.log(containsDuplicate(a));
+// console.log(containsDuplicate(a));
 // hash
 function containsDuplicate2(nums) {
     var mySet = new Set(nums);
-    console.log(mySet);
+    var myArr = Array.from(mySet.values());
+    if (myArr.length === nums.length) {
+        return true;
+    }
     return false;
 }
-containsDuplicate2(a);
+console.log(containsDuplicate2(a));

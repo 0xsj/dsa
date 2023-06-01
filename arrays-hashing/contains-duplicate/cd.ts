@@ -12,13 +12,16 @@ function containsDuplicate(nums: number[]): boolean {
   return false;
 }
 
-console.log(containsDuplicate(a));
+// console.log(containsDuplicate(a));
 
 // hash
 function containsDuplicate2(nums: number[]): boolean {
   let mySet = new Set<number>(nums);
-  console.log(mySet);
-  return false;
+  let myArr = Array.from(mySet.values());
+  if (myArr.length === nums.length) {
+    return false;
+  }
+  return true;
 }
 
-containsDuplicate2(a);
+console.log(containsDuplicate2(a));
