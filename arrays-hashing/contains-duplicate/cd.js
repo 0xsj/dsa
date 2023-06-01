@@ -11,13 +11,19 @@ function containsDuplicate(nums) {
     return false;
 }
 // console.log(containsDuplicate(a));
-// hash
+// using set
 function containsDuplicate2(nums) {
     var mySet = new Set(nums);
     var myArr = Array.from(mySet.values());
     if (myArr.length === nums.length) {
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }
 console.log(containsDuplicate2(a));
+// cleaned up ver of set solution
+function containsDuplicate3(nums) {
+    var results = new Set(nums);
+    return results.size !== nums.length;
+}
+console.log(containsDuplicate3(a));

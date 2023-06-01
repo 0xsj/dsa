@@ -14,7 +14,7 @@ function containsDuplicate(nums: number[]): boolean {
 
 // console.log(containsDuplicate(a));
 
-// hash
+// using set
 function containsDuplicate2(nums: number[]): boolean {
   let mySet = new Set<number>(nums);
   let myArr = Array.from(mySet.values());
@@ -25,3 +25,11 @@ function containsDuplicate2(nums: number[]): boolean {
 }
 
 console.log(containsDuplicate2(a));
+
+// cleaned up ver of set solution
+function containsDuplicate3(nums: number[]): boolean {
+  const results = new Set(nums);
+  return results.size !== nums.length;
+}
+
+console.log(containsDuplicate3(a));
