@@ -11,7 +11,7 @@ function containsDuplicate(nums) {
     return false;
 }
 // console.log(containsDuplicate(a));
-// using set
+// using set try 1
 function containsDuplicate2(nums) {
     var mySet = new Set(nums);
     var myArr = Array.from(mySet.values());
@@ -20,10 +20,21 @@ function containsDuplicate2(nums) {
     }
     return true;
 }
-console.log(containsDuplicate2(a));
-// cleaned up ver of set solution
+// cleaned up ver of set solution try 2
 function containsDuplicate3(nums) {
     var results = new Set(nums);
     return results.size !== nums.length;
+}
+// hashmap
+function containsDuplicate4(nums) {
+    var map = new Map();
+    for (var _i = 0, nums_1 = nums; _i < nums_1.length; _i++) {
+        var num = nums_1[_i];
+        if (map.get(num) !== undefined) {
+            return true;
+        }
+        map.set(num, 1);
+    }
+    return false;
 }
 console.log(containsDuplicate3(a));
