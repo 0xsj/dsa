@@ -11,22 +11,46 @@ function isAnagram(s: string, t: string): boolean {
 // console.log(isAnagram(s, t)); // expect false
 // console.log(isAnagram(s, y)); // expect true
 
-// try 2 - hash table
+// // try 2 - hash table  - ES6
+// function isAnagram2(s: string, t: string): boolean {
+//   const charCount = {};
 
-function isAnagram2(s: string, t: string): boolean {
+//   for (let char of s) {
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
+
+//   for (let char of t) {
+//     if (!charCount[char]) return false;
+//     charCount[char]--;
+//   }
+
+//   return true;
+// }
+
+// console.log(isAnagram2(s, t)); // false
+// console.log(isAnagram2(s, y)); // true
+
+// try 3 - hastable v2  older versions
+function isAnagram3(s: string, t: string): boolean {
   const charCount = {};
-
-  for (let char of s) {
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
     charCount[char] = (charCount[char] || 0) + 1;
   }
 
-  for (let char of t) {
+  for (let i = 0; i < t.length; i++) {
+    const char = t[i];
+
     if (!charCount[char]) return false;
     charCount[char]--;
+
+    if (charCount[char] === 0) {
+      delete charCount[char];
+    }
   }
 
-  return true;
+  return Object.keys(charCount).length === 0;
 }
 
-console.log(isAnagram2(s, t)); // false
-console.log(isAnagram2(s, y)); // true
+console.log(isAnagram3(s, t)); // false
+console.log(isAnagram3(s, y)); // true
