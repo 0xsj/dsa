@@ -11,11 +11,17 @@ const indices = [2, 1, 0, 3];
  */
 function restoreString(s: string, indicies: number[]): string {
   const map = new Map();
+  const sortedArray = [];
+
   for (let i = 0; i < s.split("").length; i++) {
-    map.set(s[i], indices[i]);
-    console.log(map);
+    map.set(indices[i], s[i]);
   }
-  return;
+
+  for (let j = 0; j < s.length; j++) {
+    sortedArray.push(map.get(j));
+  }
+
+  return sortedArray.join("");
 }
 
-restoreString(word, indices);
+console.log(restoreString(word, indices));

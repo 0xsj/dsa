@@ -11,8 +11,8 @@ var indices = [2, 1, 0, 3];
 function restoreString(s, indicies) {
     var map = new Map();
     for (var i = 0; i < s.split("").length; i++) {
-        map.set(s[i], indices[i]);
-        console.log(map);
+        map.set(indices[i], s[i]);
+        console.log(typeof map);
     }
     return;
 }
