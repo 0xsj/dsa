@@ -27,13 +27,27 @@ function twoSum(nums, target): number[] {
 
 /**
  * Try 2: hash map
+ * 1. define a function that takes in nums, target
+ * 2. create a new object called "map", where we will store key value pairs and each value associated with a unique key
+ * 3. iterate through the loop
+ * 4. we define a variable called diff, where diff is the difference between the target number and the current element
+ * it refers to a number that, when added to the current element, it equals the target value.
+ * 5. we check if the diff exists as a key inside of our map object.
+ * 6. if it exists, we return the array containing the value associated with the diff key
  *
  */
 
 function twoSum2(nums: number[], target: number): number[] {
   const map = new Map();
-  map.set(nums[0], target);
-  console.log(map);
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i];
+
+    if (map.has(diff)) {
+      return [map.get(diff), i];
+    }
+
+    map.set(nums[i], i);
+  }
   return [];
 }
 

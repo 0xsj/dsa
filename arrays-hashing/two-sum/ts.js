@@ -20,14 +20,21 @@ function twoSum(nums, target) {
     }
     return [];
 }
-twoSum(nums, target);
+// twoSum(nums, target);
 /**
  * Try 2: hash map
  *
  */
 function twoSum2(nums, target) {
     var map = new Map();
-    map.set(nums[0], target);
+    for (var i = 0; i < nums.length; i++) {
+        var diff = target - nums[i];
+        if (map.has(diff)) {
+            return [map.get(diff), i];
+        }
+        map.set(nums[i], i);
+    }
     console.log(map);
     return [];
 }
+twoSum2(nums, target);
