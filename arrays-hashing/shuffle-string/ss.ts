@@ -9,18 +9,16 @@ const indices = [2, 1, 0, 3];
  * 4. we then could sort the array in ascending order
 
  */
-function restoreString(s: string, indicies: number[]): string {
+function restoreString(s: string, indices: number[]): string {
   const map = new Map();
   const sortedArray = [];
 
   for (let i = 0; i < s.split("").length; i++) {
     map.set(indices[i], s[i]);
   }
-
   for (let j = 0; j < s.length; j++) {
     sortedArray.push(map.get(j));
   }
-
   return sortedArray.join("");
 }
 

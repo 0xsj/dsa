@@ -10,10 +10,15 @@ var indices = [2, 1, 0, 3];
  */
 function restoreString(s, indicies) {
     var map = new Map();
+    var sortedArray = [];
     for (var i = 0; i < s.split("").length; i++) {
         map.set(indices[i], s[i]);
-        console.log(typeof map);
     }
-    return;
+    for (var j = 0; j < s.length; j++) {
+        sortedArray.push(map.get(j));
+        console.log(map);
+        console.log(sortedArray);
+    }
+    return sortedArray.join("");
 }
-restoreString(word, indices);
+console.log(restoreString(word, indices));
