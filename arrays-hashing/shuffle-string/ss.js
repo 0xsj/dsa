@@ -8,7 +8,7 @@ var indices = [2, 1, 0, 3];
  * 4. we then could sort the array in ascending order
 
  */
-function restoreString(s, indicies) {
+function restoreString(s, indices) {
     var map = new Map();
     var sortedArray = [];
     for (var i = 0; i < s.split("").length; i++) {
@@ -16,9 +16,19 @@ function restoreString(s, indicies) {
     }
     for (var j = 0; j < s.length; j++) {
         sortedArray.push(map.get(j));
-        console.log(map);
-        console.log(sortedArray);
     }
     return sortedArray.join("");
 }
 console.log(restoreString(word, indices));
+/**
+ * Try 2: simplified.
+ *
+ */
+function restoreString2(s, indicies) {
+    var results = [];
+    for (var i = 0; i < s.split("").length; i++) {
+        results[indices[i]] = s[i];
+    }
+    return results.join("");
+}
+console.log(restoreString2(word, indices));

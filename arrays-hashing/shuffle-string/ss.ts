@@ -23,3 +23,18 @@ function restoreString(s: string, indices: number[]): string {
 }
 
 console.log(restoreString(word, indices));
+
+/**
+ * Try 2: simplified.
+ *
+ */
+
+function restoreString2(s: string, indicies: number[]): string {
+  const results = [];
+  for (let i = 0; i < s.split("").length; i++) {
+    results[indices[i]] = s[i];
+  }
+  return results.join("");
+}
+
+console.log(restoreString2(word, indices));
