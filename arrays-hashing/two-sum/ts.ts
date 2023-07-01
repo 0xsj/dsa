@@ -3,6 +3,12 @@ const target = 23;
 
 /**
  * Try 1: brute force
+ * 1. define a function that takes in nums array and the target number
+ * 2. iterate through the nums array
+ * 3. start a nested for loop, increment the starting index by 1 (i + 1)
+ * 4. if the sum of the two indices match the target number, return the indices in an array
+ *
+ *
  */
 
 function twoSum(nums, target): number[] {
