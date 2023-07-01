@@ -23,4 +23,18 @@ function twoSum(nums, target): number[] {
   return [];
 }
 
-twoSum(nums, target);
+// twoSum(nums, target);
+
+/**
+ * Try 2: hash map
+ *
+ */
+
+function twoSum2(nums: number[], target: number): number[] {
+  const map = new Map();
+  map.set(nums[0], target);
+  console.log(map);
+  return [];
+}
+
+twoSum2(nums, target);
